@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Harsh Rathod | Developer Portfolio</title>
+    <meta name="description"
+        content="Harsh Rathod portfolio – Computer Engineering student, web developer, projects and skills.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- DevIcons -->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Animated Background -->
+    <!-- Particle Background -->
+    <canvas id="particles"></canvas>
+
+
+    <!-- NAVBAR -->
+    <nav class="navbar" data-aos="fade-down">
+        <h1>Harsh<span style="opacity:0.5">Stream</span></h1>
+
+        <div class="nav-links">
+            <span>Harsh Rathod</span>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content" data-aos="fade-right">
+            <h1>Hi, I'm <span class="highlight">Harsh Rathod</span></h1>
+
+            <p class="subtitle">
+                Computer Engineering Student | Aspiring Software Engineer
+            </p>
+            <p class="description">
+                Enthusiastic Computer Science student passionate about software development,
+                seeking an entry-level Software Engineering role to apply my skills and grow
+                in a real-world environment.
+            </p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn primary">Contact Me</a>
+                <a href="#projects" class="btn secondary">View Projects</a>
+                <a href="assets/RESUME.pdf" class="btn resume-btn" download>Download CV ⇩</a>
+            </div>
+        </div>
+
+        <div class="hero-image" data-aos="fade-left">
+            <div class="img-wrapper">
+                <img src="assets/profile.jpg" alt="Harsh Rathod Profile Photo">
+            </div>
+        </div>
+    </section>
+
+    <section class="row" data-aos="fade-up">
+        <h3 class="section-title">Education</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="card-icon">🎓</div>
+                    <h4>Bachelor of Computer Engineering</h4>
+                    <p class="school">Savitribai Phule Pune University</p>
+                    <p class="year">2023 – Present</p>
+                    <p class="small">DSA, OOP, DBMS, OS, Web Development</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="card-icon">🏫</div>
+                    <h4>HSC</h4>
+                    <p class="school">Bhavan’s B.P. Vidya Mandir, Ashti</p>
+                    <p class="year">2022 – 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="row" id="projects" data-aos="fade-up">
+        <h3 class="section-title">Projects</h3>
+        <div class="cards">
+            <div class="card project-card" onclick="openModal(
+             'Smart Agriculture Assistant',
+             'Agricultural platform providing crop recommendations and resource management features using HTML and JavaScript.',
+             'HTML, CSS, JavaScript'
+             )">
+                <div class="card-image-placeholder">🌾</div>
+                <div class="card-content">
+                    <h4>Smart Agriculture Assistant</h4>
+                    <p>Crop recommendation & resource management</p>
+                    <span class="view-more">View Details &rarr;</span>
+                </div>
+            </div>
+
+            <div class="card project-card" onclick="openModal(
+             'Todo App',
+             'JavaScript-based Todo app with add, edit, delete functionality and local storage support.',
+             'JavaScript, DOM, Local Storage'
+             )">
+                <div class="card-image-placeholder">📝</div>
+                <div class="card-content">
+                    <h4>Todo App</h4>
+                    <p>Task management application</p>
+                    <span class="view-more">View Details &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- SKILLS -->
+    <!-- SKILLS -->
+    <section class="row" data-aos="fade-up">
+        <h3 class="section-title">Skills</h3>
+        <div class="cards skills-grid">
+            <div class="skill-tag"><i class="devicon-java-plain"></i> Java</div>
+            <div class="skill-tag"><i class="devicon-javascript-plain"></i> JavaScript</div>
+            <div class="skill-tag"><i class="devicon-html5-plain"></i> HTML</div>
+            <div class="skill-tag"><i class="devicon-css3-plain"></i> CSS</div>
+            <div class="skill-tag"><i class="devicon-cplusplus-plain"></i> C++</div>
+            <div class="skill-tag"><i class="devicon-python-plain"></i> Python</div>
+            <div class="skill-tag"><i class="devicon-mysql-plain"></i> MySQL</div>
+            <div class="skill-tag">DSA</div>
+            <div class="skill-tag">DBMS</div>
+            <div class="skill-tag">OS</div>
+        </div>
+    </section>
+
+    <section class="row" data-aos="fade-up">
+        <h3 class="section-title">Certificates</h3>
+        <div class="cards">
+            <div class="card cert-card">
+                <div class="cert-icon">🏆</div>
+                <p>Hackathon – Innoverse</p>
+            </div>
+            <div class="card cert-card">
+                <div class="cert-icon">💼</div>
+                <p>J.P. Morgan Software Engineering Simulation</p>
+            </div>
+            <div class="card cert-card">
+                <div class="cert-icon">🤖</div>
+                <p>Google Generative AI Studio</p>
+            </div>
+            <div class="card cert-card">
+                <div class="cert-icon">📊</div>
+                <p>Microsoft MS Excel</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="row" data-aos="fade-up">
+        <h3 class="section-title">Activities & Leadership</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="card-icon">🚀</div>
+                    <h4>Technical Participation</h4>
+                    <p>
+                        Participated in technical events, debugging challenges, seminars,
+                        and workshops on AI, ML, and Web Development.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="card-icon">👥</div>
+                    <h4>Leadership</h4>
+                    <p>
+                        Served as team leader during academic projects and organized
+                        college-level technical events.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="row" id="contact" data-aos="fade-up">
+        <h3 class="section-title">Get In Touch</h3>
+
+        <div class="contact-container">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="card contact-card">
+                    <span class="contact-icon">📍</span>
+                    <span>Nagpur, India</span>
+                </div>
+                <div class="card contact-card">
+                    <span class="contact-icon">📞</span>
+                    <span>+91 8263094767</span>
+                </div>
+                <div class="card contact-card">
+                    <span class="contact-icon">📧</span>
+                    <a href="mailto:harsh.0707005@gmail.com">harsh.0707005@gmail.com</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/harsh0707005-web" target="_blank" title="GitHub"><i
+                            class="devicon-github-original"></i></a>
+                    <a href="https://www.linkedin.com/in/harsh-rathod-b91020370/" target="_blank" title="LinkedIn"><i
+                            class="devicon-linkedin-plain"></i></a>
+
+                    <!-- LeetCode -->
+                    <a href="https://leetcode.com/u/Harsh07072005/" target="_blank" title="LeetCode">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                            style="vertical-align: middle;">
+                            <path
+                                d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.173 5.423a1.398 1.398 0 0 0-.183 1.911l.254.323c.323.409.64.811.95 1.218.409.535 1.171.603 1.668.156l2.97-2.673c.271-.244.43-.591.43-.956V1.374C14.262-.128 13.483 0 13.483 0zm-2.097 5.03L8.724 7.42c-.22.2-.472.333-.746.398-.27.065-.546.052-.811-.04l-2.036-.71c-1.07-.373-1.636-1.543-1.263-2.613l.115-.33c.373-1.07 1.543-1.636 2.613-1.263l2.036.71c.62.216 1.077.72 1.233 1.336L7.962 4.4l1.455-1.309c.818-.736 2.067-.655 2.804.164l.092.11c.737.817.656 2.066-.164 2.803L8.981 9.034c-.201.18-.328.435-.355.706-.027.27.037.545.18.78.14.237.362.417.618.508l2.094.75c1.08.385 2.275-.17 2.66-1.25l.11-.31c.385-1.08-.17-2.275-1.25-2.66l-2.094-.75c-.628-.225-1.09-.738-1.246-1.363l2.587-2.327-.9-.999zm-4.46 7.63c-.477-.17-.985-.015-1.294.363l-.22.27c-.247.302-.505.594-.77.874l-.19.2c-1.075 1.127-2.85 1.16-3.951.107l-.092-.09c-1.127-1.075-1.16-2.85-.107-3.95l.19-.2c.28-.293.576-.575.885-.845l.26-.23c.48-.415.46-.774-.044-.943l-.332-.11c-1.087-.362-2.27.208-2.633 1.295l-.105.32c-.363 1.086.208 2.27 1.295 2.633l.332.11c.636.212 1.107.726 1.272 1.36 0 0 .57-2.19 1.488-2.63l.36-.18c1.07-.534 2.378-.06 2.912 1.01l.145.29c.534 1.07.06 2.378-1.01 2.912l-.36.18c-.896.447-1.92.148-2.506-.63l.23-.2c.22-.19.43-.39.63-.6l1.245-1.3c.72-.756 2.016-2.364 2.016-2.364l1.306.467z" />
+                        </svg>
+                    </a>
+
+                    <!-- GeeksForGeeks (Custom SVG) -->
+                    <a href="https://www.geeksforgeeks.org/profile/harsh07072005" target="_blank" title="GeeksForGeeks"
+                        style="color: #2f8d46;">
+                        <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"
+                            style="vertical-align: middle;">
+                            <path
+                                d="M12 0C5.373 0 0 5.373 0 12c0 6.628 5.373 12 12 12 6.627 0 12-5.372 12-12 0-6.627-5.373-12-12-12zm.45 18.72h-3.18v-1.63h.7c.48 0 .58-.14.58-.61V7.91c0-.42-.16-.54-.6-.54h-.68v-1.6h3.17v1.64h-.73c-.48 0-.58.12-.58.6v8.46c0 .4.15.54.61.54h.71v1.71zm6.9-3.23h-2.14c-1.8 0-2.31-1-2.31-2.2v-1.08c0-.75.2-1.28 1.14-1.6v-.06c-.8-.3-1.02-.8-1.02-1.53V7.99c0-1.12.56-1.92 2.2-1.92h2.09v1.6h-.56c-.5 0-.62.11-.62.53v1.07c0 .4.13.52.6.52h.6v1.44h-.6c-.45 0-.58.13-.58.53v1.27c0 .43.14.53.64.53h.56v1.94z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form action="https://formspree.io/f/xgvgjegl" method="POST" class="contact-form">
+                <input type="hidden" name="_subject" value="New message from Harsh Rathod Portfolio">
+
+
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <!-- PROJECT MODAL -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p><strong>Tech Stack:</strong> <span id="modalTech"></span></p>
+        </div>
+    </div>
+<footer style="text-align:center; padding:30px; color:#888;">
+    © 2025 Harsh Rathod • 
+</footer>
+
+</body>
+
+</html>
