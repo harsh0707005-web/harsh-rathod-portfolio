@@ -566,6 +566,34 @@ footer {
     box-shadow: 0 0 15px rgba(0, 242, 234, 0.4);
 }
 
+/* Certificate Cards Clickable */
+.cert-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cert-link:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 242, 234, 0.4);
+}
+
+.cert-view {
+    margin-top: 10px;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.cert-link:hover .cert-view {
+    color: var(--secondary);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero {
