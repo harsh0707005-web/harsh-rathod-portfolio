@@ -60,8 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
             const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < mouse.radius) {
-                this.x += dx / 20;
-                this.y += dy / 20;
+                if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
+                    this.x += 10;
+                }
+                if (mouse.x > this.x && this.x > this.size * 10) {
+                    this.x -= 10;
+                }
+                if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
+                    this.y += 10;
+                }
+                if (mouse.y > this.y && this.y > this.size * 10) {
+                    this.y -= 10;
+                }
             }
         }
 
@@ -73,39 +83,40 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    function init() {
-        particlesArray = [];
-        const count = (canvas.width * canvas.height) / 9000;
-        for (let i = 0; i < count; i++) {
-            particlesArray.push(new Particle());
+    function connectParticles() {
+        let opacityValue = 1;
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a; b < particlesArray.length; b++) {
+                let dx = particlesArray[a].x - particlesArray[b].x;
+                let dy = particlesArray[a].y - particlesArray[b].y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 120) {
+                    opacityValue = 1 - distance / 120;
+                    ctx.strokeStyle = `rgba(0, 242, 234, ${opacityValue})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
         }
     }
 
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-
         for (let i = 0; i < particlesArray.length; i++) {
             particlesArray[i].update();
             particlesArray[i].draw();
-
-            for (let j = i; j < particlesArray.length; j++) {
-                const dx = particlesArray[i].x - particlesArray[j].x;
-                const dy = particlesArray[i].y - particlesArray[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-
-                if (distance < 100) {
-                    ctx.beginPath();
-                    ctx.strokeStyle = `rgba(0,242,234,${1 - distance / 100})`;
-                    ctx.lineWidth = 1;
-                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
-                    ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
-                    ctx.stroke();
-                }
-            }
         }
+        connectParticles();
         requestAnimationFrame(animate);
     }
 
-    init();
+    for (let i = 0; i < 100; i++) {
+        particlesArray.push(new Particle());
+    }
+
     animate();
 });
