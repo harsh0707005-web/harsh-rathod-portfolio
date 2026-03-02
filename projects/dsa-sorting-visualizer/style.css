@@ -1,0 +1,245 @@
+:root {
+    --primary: #00f2ea;
+    --secondary: #ff0050;
+    --bg-dark: #050505;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-main: #fff;
+    --text-muted: #a0a0a0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background: #0a0a1a;
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.controls select,
+.controls input {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: #fff;
+    font-size: 0.9rem;
+    outline: none;
+}
+
+.controls select:focus,
+.controls input:focus {
+    border-color: var(--primary);
+}
+
+.slider-label {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.slider-label input[type="range"] {
+    width: 100px;
+    vertical-align: middle;
+}
+
+.controls button {
+    background: var(--primary);
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.controls button:hover {
+    background: var(--secondary);
+    color: #fff;
+}
+
+.controls button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.controls button.reset {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+.controls button.reset:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* Visualizer */
+.visualizer {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px 20px;
+    min-height: 350px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 3px;
+    box-shadow: 0 0 30px rgba(0, 242, 234, 0.1);
+}
+
+.bar {
+    background: var(--primary);
+    border-radius: 4px 4px 0 0;
+    transition: height 0.1s ease;
+    min-width: 4px;
+}
+
+.bar.comparing {
+    background: var(--secondary);
+}
+
+.bar.sorted {
+    background: #00ff88;
+}
+
+.bar.pivot {
+    background: #ffd700;
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.legend-color {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+}
+
+.legend-color.unsorted {
+    background: var(--primary);
+}
+
+.legend-color.comparing {
+    background: var(--secondary);
+}
+
+.legend-color.pivot {
+    background: #ffd700;
+}
+
+.legend-color.sorted {
+    background: #00ff88;
+}
+
+/* Info Panel */
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.info-item {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 12px 20px;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+.info-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.info-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Back Link */
+.back-link {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    z-index: 10;
+}
+
+.back-link:hover {
+    color: var(--secondary);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .visualizer {
+        padding: 20px 10px;
+        min-height: 250px;
+    }
+
+    .controls {
+        gap: 8px;
+    }
+}

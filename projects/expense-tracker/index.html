@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker | Harsh Rathod</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="https://harsh-rathod.netlify.app/" class="back-link">&larr; Back to Portfolio</a>
+    <div class="container">
+        <h1>💰 Expense Tracker</h1>
+        <p class="subtitle">Track your income and expenses</p>
+
+        <!-- Summary -->
+        <div class="summary">
+            <div class="summary-card">
+                <p class="summary-label">Balance</p>
+                <p class="summary-value balance" id="balance">₹0</p>
+            </div>
+            <div class="summary-card">
+                <p class="summary-label">Income</p>
+                <p class="summary-value income" id="totalIncome">₹0</p>
+            </div>
+            <div class="summary-card">
+                <p class="summary-label">Expense</p>
+                <p class="summary-value expense" id="totalExpense">₹0</p>
+            </div>
+        </div>
+
+        <!-- Add Transaction Form -->
+        <div class="add-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" id="desc" placeholder="e.g. Salary, Food">
+                </div>
+                <div class="form-group">
+                    <label>Amount (₹)</label>
+                    <input type="number" id="amount" placeholder="0" min="0">
+                </div>
+            </div>
+            <div class="form-row" style="margin-top: 10px;">
+                <div class="form-group">
+                    <label>Type</label>
+                    <select id="type">
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Category</label>
+                    <select id="category">
+                        <option value="food">🍔 Food</option>
+                        <option value="transport">🚗 Transport</option>
+                        <option value="shopping">🛒 Shopping</option>
+                        <option value="bills">📱 Bills</option>
+                        <option value="entertainment">🎮 Entertainment</option>
+                        <option value="health">💊 Health</option>
+                        <option value="education">📚 Education</option>
+                        <option value="salary">💼 Salary</option>
+                        <option value="freelance">💻 Freelance</option>
+                        <option value="other">📦 Other</option>
+                    </select>
+                </div>
+            </div>
+            <button class="add-btn" onclick="addTransaction()">+ Add Transaction</button>
+        </div>
+
+        <!-- Filter -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+            <button class="filter-btn" onclick="setFilter('income', this)">Income</button>
+            <button class="filter-btn" onclick="setFilter('expense', this)">Expense</button>
+        </div>
+
+        <!-- Transactions -->
+        <div class="transactions" id="transactionsList"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

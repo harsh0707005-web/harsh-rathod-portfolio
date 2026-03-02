@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Sorting Visualizer | Harsh Rathod</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="https://harsh-rathod.netlify.app/" class="back-link">&larr; Back to Portfolio</a>
+    <div class="container">
+        <h1>📊 DSA Sorting Visualizer</h1>
+        <p class="subtitle">Watch sorting algorithms in action</p>
+
+        <div class="controls">
+            <select id="algorithm">
+                <option value="bubble">Bubble Sort</option>
+                <option value="selection">Selection Sort</option>
+                <option value="insertion">Insertion Sort</option>
+                <option value="merge">Merge Sort</option>
+                <option value="quick">Quick Sort</option>
+            </select>
+            <label class="slider-label">Size:
+                <input type="range" id="sizeSlider" min="10" max="100" value="50">
+                <span id="sizeLabel">50</span>
+            </label>
+            <label class="slider-label">Speed:
+                <input type="range" id="speedSlider" min="1" max="100" value="50">
+            </label>
+            <button onclick="startSort()" id="startBtn">▶ Sort</button>
+            <button class="reset" onclick="generateArray()">↻ New Array</button>
+        </div>
+
+        <div class="visualizer" id="visualizer"></div>
+
+        <div class="legend">
+            <div class="legend-item"><div class="legend-color unsorted"></div> Unsorted</div>
+            <div class="legend-item"><div class="legend-color comparing"></div> Comparing</div>
+            <div class="legend-item"><div class="legend-color pivot"></div> Pivot</div>
+            <div class="legend-item"><div class="legend-color sorted"></div> Sorted</div>
+        </div>
+
+        <div class="info">
+            <div class="info-item">
+                <p class="info-label">Comparisons</p>
+                <p class="info-value" id="comparisons">0</p>
+            </div>
+            <div class="info-item">
+                <p class="info-label">Swaps</p>
+                <p class="info-value" id="swaps">0</p>
+            </div>
+            <div class="info-item">
+                <p class="info-label">Time Complexity</p>
+                <p class="info-value" id="timeComplexity">-</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
