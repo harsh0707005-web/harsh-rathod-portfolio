@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://harsh-rathod-portfolio.netlify.app/sitemap.xml
