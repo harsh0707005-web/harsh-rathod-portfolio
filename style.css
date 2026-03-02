@@ -294,6 +294,16 @@ body {
     margin-top: 10px;
 }
 
+/* Project Link Cards */
+.project-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-link:hover .view-more {
+    color: var(--secondary);
+}
+
 /* ===== Specific Card Styles ===== */
 .skills-grid {
     display: flex;
