@@ -57,9 +57,58 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.nav-links span {
-    font-size: 1rem;
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
     color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 200;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: var(--text-main);
+    transition: all 0.3s ease;
 }
 
 /* ===== Hero Section ===== */
@@ -596,6 +645,28 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        gap: 15px;
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
     .hero {
         flex-direction: column;
         padding: 20px;
@@ -609,6 +680,11 @@ footer {
     .hero-image {
         max-width: 250px;
         margin: 20px auto 0;
+    }
+
+    .hero-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .cards {

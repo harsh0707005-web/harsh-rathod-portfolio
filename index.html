@@ -20,11 +20,16 @@
     <meta property="og:description" content="Harsh Vijay Rathod – Computer Engineering student, aspiring software engineer. View my projects, skills, and experience.">
     <meta property="og:url" content="https://harsh-rathod.netlify.app/">
     <meta property="og:site_name" content="Harsh Vijay Rathod Portfolio">
+    <meta property="og:image" content="https://harsh-rathod.netlify.app/assets/profile.jpg">
+    <meta property="og:image:alt" content="Harsh Vijay Rathod - Developer Portfolio">
+    <meta property="og:image:width" content="400">
+    <meta property="og:image:height" content="400">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Harsh Vijay Rathod | Developer Portfolio">
     <meta name="twitter:description" content="Harsh Vijay Rathod – Computer Engineering student, aspiring software engineer. View my projects, skills, and experience.">
+    <meta name="twitter:image" content="https://harsh-rathod.netlify.app/assets/profile.jpg">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -83,9 +88,16 @@
     <nav class="navbar" data-aos="fade-down">
         <h1>Harsh<span style="opacity:0.5">Stream</span></h1>
 
-        <div class="nav-links">
-            <a href="#experience" style="color:var(--text-muted);text-decoration:none;margin-right:15px;">Experience</a>
-            <span>Harsh Rathod</span>
+        <button class="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#certificates">Certificates</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
@@ -207,8 +219,7 @@
 
 
     <!-- SKILLS -->
-    <!-- SKILLS -->
-    <section class="row" data-aos="fade-up">
+    <section class="row" id="skills" data-aos="fade-up">
         <h3 class="section-title">Skills</h3>
         <div class="cards skills-grid">
             <div class="skill-tag"><i class="devicon-java-plain"></i> Java</div>
@@ -224,7 +235,7 @@
         </div>
     </section>
 
-    <section class="row" data-aos="fade-up">
+    <section class="row" id="certificates" data-aos="fade-up">
         <h3 class="section-title">Certificates</h3>
         <div class="cards">
             <a href="https://drive.google.com/file/d/1AegwzecvzQnj9GT3EWpRlwVjCaHPiNf5/view?usp=sharing" target="_blank" class="card cert-card cert-link">
@@ -363,6 +374,17 @@
         AOS.init({
             duration: 1000,
             once: true
+        });
+
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close nav when a link is clicked (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
         });
     </script>
     <!-- PROJECT MODAL -->
